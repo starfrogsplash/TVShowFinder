@@ -1,8 +1,21 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+it('renders tv show cards', () => {
+  const {queryAllByTitle} = render(<App />)
+  const title = queryAllByTitle('showCards')
+  expect(title).toBeTruthy();
+});
+
+it('renders season cards', () => {
+  const {queryAllByTitle} = render(<App />)
+  const title = queryAllByTitle('seasonCards')
+  expect(title).toBeTruthy();
+});
+
+it('renders cast cards', () => {
+  const {queryAllByTitle} = render(<App />)
+  const title = queryAllByTitle('castCards')
+  expect(title).toBeTruthy();
 });
