@@ -21,6 +21,13 @@ it('returns an array of unique cast members (removing duplicates)', () => {
     {id: 2, name:'katie'}
   ]
 
+
+  // let set = new Set(mockCastData.data.map(JSON.stringify))
+
+  // let arr2 = Array.from(set).map(JSON.parse)
+
+  // console.log('arr2===', arr2)
+
   const getUniquePageViewsResult = getUniqueCast(mockCastData)
   expect(getUniquePageViewsResult).toEqual(result)
 })
